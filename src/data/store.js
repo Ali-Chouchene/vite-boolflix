@@ -12,5 +12,8 @@ export const store = reactive({
     /**movies array */
     movies: [],
     /**series array */
-    tv: [],
+    series: [],
+
+    /**titolo cercato */
+    searchedTerm: '',
 })

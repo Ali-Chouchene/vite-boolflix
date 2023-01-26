@@ -1,0 +1,33 @@
+<script>
+import { store } from '../../src/data/store'
+export default {
+    name: 'AppHeader',
+    data() {
+        return {
+            store
+        }
+    },
+    emits: ['clicked']
+}
+
+</script>
+<template>
+    <header class="bg-dark">
+        <div class="container d-flex justify-content-between p-4">
+            <div><img class="w-50" src="../assets/img/boolflix.png" alt="boolflix"></div>
+            <div class="d-flex align-items-center">
+                <form v-on:submit.prevent="onSubmit" class="d-flex" role="search">
+                    <input v-model="store.searchedTerm" class="form-control me-1" @keyup.enter="$emit('clicked')"
+                        type="search" placeholder="Cerca" aria-label="Search">
+                    <button @click="$emit('clicked')" class="btn btn-outline-danger" type="button">Trova</button>
+                </form>
+            </div>
+        </div>
+    </header>
+</template>
+
+
+
+<style lang="scss" scoped>
+
+</style>

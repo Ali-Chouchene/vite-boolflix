@@ -1,18 +1,36 @@
 <script >
 import axios from 'axios'
 import { store } from '../src/data/store'
+import AppHeader from './components/AppHeader.vue'
 export default {
+  name: 'App',
+  components: { AppHeader },
   data() {
     return {
       store,
     }
   },
   methods: {
-    fetchMovies(url) {
-      axios.get(url)
-        .then(res => {
-          store.movies = res.data.results;
-        })
+    fetchMovies() {
+      store.movies = [];
+      store.series = [];
+      if (store.searchedTerm) {
+        const urlM = `${store.apiUri}movie${store.apiKey}${store.apiTerm}` + store.searchedTerm;
+        const urlS = `${store.apiUri}tv${store.apiKey}${store.apiTerm}` + store.searchedTerm;
+        axios.get(urlM)
+          .then(res => {
+            store.movies = res.data.results;
+          })
+        axios.get(urlS)
+          .then(res => {
+            store.series = res.data.results;
+          })
+        store.searchedTerm = '';
+      } else {
+        store.searchedTerm = '';
+        return
+      }
+
     },
   }
 }
@@ -20,23 +38,21 @@ export default {
 
 <template>
   <!--header-->
-  <header class="bg-dark">
-    <div class="container d-flex justify-content-between p-4">
-      <div><img class="w-50" src="./assets/img/boolflix.png" alt="boolflix"></div>
-      <div class="d-flex align-items-center">
-        <form class="d-flex" role="search">
-          <input class="form-control me-1" type="search" placeholder="Cerca" aria-label="Search">
-          <button class="btn btn-outline-danger" type="button">Trova</button>
-        </form>
-      </div>
-    </div>
-  </header>
+  <app-header @clicked="fetchMovies"></app-header>
   <!--main-->
   <main class="bg-secondary">
     <div class="container py-5">
       <h1 class="py-5">FILM</h1>
       <ul>
-        <li></li>
+        <li v-for="movie in store.movies" :key="movie.id">
+          {{ movie.title }}
+        </li>
+      </ul>
+      <h1 class="py-5">SERIE</h1>
+      <ul>
+        <li v-for="serie in store.series" :key="serie.id">
+          {{ serie.name }}
+        </li>
       </ul>
     </div>
   </main>
