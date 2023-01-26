@@ -12,7 +12,7 @@ export default {
 
 </script>
 <template>
-    <header class="bg-dark">
+    <header class="bg-dark pb-2">
         <div class="container d-flex justify-content-between p-4">
             <div><img class="w-50" src="../assets/img/boolflix.png" alt="boolflix"></div>
             <div class="d-flex align-items-center">
@@ -29,5 +29,11 @@ export default {
 
 
 <style lang="scss" scoped>
-
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
 </style>

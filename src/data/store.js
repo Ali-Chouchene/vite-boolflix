@@ -16,4 +16,7 @@ export const store = reactive({
 
     /**titolo cercato */
     searchedTerm: '',
+
+    /** base url images */
+    imgBase: 'https://image.tmdb.org/t/p/w342'
 })
