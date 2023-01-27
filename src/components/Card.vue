@@ -1,10 +1,20 @@
 <script>
+const lang = ['it', 'en', 'fr', 'ca', 'cn', 'es', 'hr', 'ja', 'ml', 'nl', 'sh',];
 import { store } from '../../src/data/store'
 export default {
     name: 'Card',
     data() {
         return {
             store
+
+        }
+    },
+    methods: {
+        ratingStars(n) {
+            const vote = Math.ceil(n) / 2;
+            return Math.ceil(vote)
+
+
         }
     },
     props: { card: Object }
@@ -18,8 +28,15 @@ export default {
         <div class="description d-flex flex-column align-items-center gap-2">
             <h5><strong>Titolo:</strong></h5>
             <h6>{{ card.title }}</h6>
+            <h5>VOTE</h5>
+            <div v-if="card.vote_average">
+                <i v-for="star in ratingStars(card.vote_average)" class="fa-solid fa-star checked"> </i>
+            </div>
+            <p v-else>-</p>
             <h5><strong>Lingua:</strong></h5>
-            <img class="language" :src="`/src/assets/img/${card.original_language}.png`" alt="">
+            <img v-if="store.lang.includes(card.original_language)" class="language"
+                :src="`/src/assets/img/${card.original_language}.png`" alt="">
+            <p v-else>{{ card.original_language }}</p>
             <h5><strong>Overview:</strong></h5>
             <h6>{{ card.overview }}</h6>
         </div>
@@ -29,7 +46,7 @@ export default {
 <style lang="scss" scoped>
 .col {
     height: 500px;
-    flex-grow: 1;
+    flex-grow: 0.2;
     background-color: rgba(0, 0, 0, 0.164);
     color: white;
     padding-left: 0;
@@ -57,7 +74,7 @@ export default {
 
     .description {
         position: absolute;
-        padding: 3rem 2rem;
+        padding: 1.5rem 2rem;
         top: 0;
         bottom: 0;
         left: 0;
@@ -73,6 +90,13 @@ export default {
             text-shadow: 4px 3px 2px rgba(124, 2, 2, 0.99);
         }
 
+        h6 {
+            font-size: 15px;
+        }
+
+        .checked {
+            color: rgb(255, 0, 0);
+        }
     }
 
 }

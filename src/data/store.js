@@ -1,6 +1,9 @@
 import { reactive } from 'vue';
 export const store = reactive({
 
+    /**Loader */
+    isLoading: false,
+
     /** original api + movie OR tv(series) */
     apiUri: 'https://api.themoviedb.org/3/search/',
 
@@ -18,6 +21,8 @@ export const store = reactive({
     searchedTerm: '',
 
     /** base url images */
-    imgBase: 'https://image.tmdb.org/t/p/w342'
+    imgBase: 'https://image.tmdb.org/t/p/w342',
 
+    /** array lingue con img */
+    lang: ['it', 'en', 'fr', 'ca', 'cn', 'es', 'hr', 'ja', 'ml', 'nl', 'sh',]
 })
