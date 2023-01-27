@@ -23,8 +23,8 @@ export default {
 
 </script>
 <template>
-    <div class="col shadow text-center">
-        <img :src="`${store.imgBase}${card.poster_path}`" :alt="card.title">
+    <div class="col  shadow text-center">
+        <img class="rounded-2" :src="`${store.imgBase}${card.poster_path}`" :alt="card.title">
         <div class="description d-flex flex-column align-items-center gap-2">
             <h5><strong>Titolo:</strong></h5>
             <h6>{{ card.title }}</h6>
@@ -53,6 +53,7 @@ export default {
     padding-right: 0;
     cursor: pointer;
     position: relative;
+
 
 
     .language {
