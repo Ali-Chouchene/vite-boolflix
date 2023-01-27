@@ -19,4 +19,5 @@ export const store = reactive({
 
     /** base url images */
     imgBase: 'https://image.tmdb.org/t/p/w342'
+
 })
