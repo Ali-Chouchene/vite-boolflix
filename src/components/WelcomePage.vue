@@ -21,7 +21,7 @@ export default {
 
     h2 {
         font-size: 100px;
-        color: black;
+        color: rgb(168, 164, 164);
 
     }
 
@@ -31,7 +31,7 @@ export default {
 
     h3 {
         font-size: 50px;
-        color: black;
+        color: rgb(177, 175, 175);
     }
 
     h1 {

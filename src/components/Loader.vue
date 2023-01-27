@@ -13,7 +13,7 @@ export default {
 <template>
     <div class="d-flex flex-column justify-content-center align-items-center w-100 loader-container">
         <div class="loader"></div>
-        <h3 class="pt-4">Loading...</h3>
+        <h3 class="pt-4 text-light">Loading...</h3>
     </div>
 </template>
 
