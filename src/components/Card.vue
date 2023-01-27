@@ -79,7 +79,7 @@ export default {
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: rgba(0, 0, 0, 0.836);
+        background-color: rgba(0, 0, 0, 0.884);
         visibility: hidden;
         opacity: 0;
         transition: visibility 0s, opacity 0.2s linear;
@@ -91,6 +91,7 @@ export default {
         }
 
         h6 {
+
             font-size: 15px;
         }
 

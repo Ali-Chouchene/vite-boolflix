@@ -16,7 +16,7 @@ export default {
 
 </script>
 <template>
-    <main class="bg-secondary pt-2">
+    <main class=" pt-2">
         <welcome-page v-if="!store.movies.length && !store.isLoading"></welcome-page>
         <loader v-if="store.isLoading"></loader>
         <div v-if="store.movies.length && !store.isLoading" class="container py-4">
@@ -42,5 +42,6 @@ export default {
 
 main {
     min-height: 70vh;
+    background-color: rgb(7, 7, 7);
 }
 </style>

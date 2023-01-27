@@ -12,7 +12,7 @@ export default {
 
 </script>
 <template>
-    <header class="bg-dark pb-2">
+    <header class=" pb-2">
         <div class="container d-flex justify-content-between p-4">
             <div><img @click="$emit('clicked')" class="w-50 d-none d-sm-block" src="../assets/img/boolflix.png"
                     alt="boolflix"></div>
@@ -33,6 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
+    background-color: black;
     position: sticky;
     top: 0;
     left: 0;
