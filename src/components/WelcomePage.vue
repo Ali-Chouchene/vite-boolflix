@@ -10,6 +10,7 @@ export default {
         <h1 class="d-block d-sm-none">CERCA QUALCOSA DA QUARDARE</h1>
         <h2 class="pb-3 d-none d-sm-block">BENVENUTO SU <span class="boolflix">BOOLFLIX</span> </h2>
         <h3 class="d-none d-sm-block">CERCA QUALCOSA DA QUARDARE</h3>
+        <h4>O FAI UNA RICERCA CASUALE PER GENERE</h4>
 
 
     </div>
@@ -36,6 +37,10 @@ export default {
 
     h1 {
         font-size: 35px;
+    }
+
+    h4 {
+        color: rgb(177, 175, 175);
     }
 
 }

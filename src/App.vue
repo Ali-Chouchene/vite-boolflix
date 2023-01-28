@@ -48,6 +48,41 @@ export default {
     },
     setLoading() {
       store.isLoading = false
+    },
+    filterGenre(id) {
+      if (!id) {
+        store.isLoading = true;
+        this.fetchApi()
+        setTimeout(this.setLoading, 2000);
+
+      }
+      else {
+        store.isLoading = true;
+        store.movies = [];
+        store.series = [];
+        const urlM = `${store.apiGenres}movie${store.apiKey}${store.searchedGenre}` + id;
+        const urlS = `${store.apiGenres}tv${store.apiKey}${store.searchedGenre}` + id;
+        /**movies call */
+        axios.get(urlM)
+          .then(res => {
+            store.movies = res.data.results;
+          }).catch(err => {
+            console.log(err.code);
+            console.log(err.message);
+          })
+
+        /**series call */
+        axios.get(urlS)
+          .then(res => {
+            store.series = res.data.results;
+          }).catch(err => {
+            console.log(err.code);
+            console.log(err.message);
+          })
+        store.searchedTerm = '';
+        setTimeout(this.setLoading, 2500);
+
+      }
     }
   }
 }
@@ -55,7 +90,7 @@ export default {
 
 <template>
   <!--header-->
-  <app-header @clicked="fetchApi"></app-header>
+  <app-header @clicked="fetchApi" @current-option="filterGenre"></app-header>
   <!--main-->
   <app-main></app-main>
 </template>

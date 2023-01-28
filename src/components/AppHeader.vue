@@ -1,29 +1,39 @@
 <script>
 import { store } from '../../src/data/store'
+import SelectOptions from './SelectOptions.vue'
 export default {
     name: 'AppHeader',
+    components: { SelectOptions },
     data() {
         return {
             store
         }
     },
-    emits: ['clicked']
+    methods: {
+        passChange(id) {
+            this.$emit('current-option', id)
+            console.log(id)
+
+        }
+    },
+    emits: ['clicked', 'current-option']
 }
 
 </script>
 <template>
-    <header class=" pb-2">
-        <div class="container d-flex justify-content-between p-4">
+    <header>
+        <div class=" container d-flex justify-content-between align-items-center py-2">
             <div><img @click="$emit('clicked')" class="w-50 d-none d-sm-block" src="../assets/img/boolflix.png"
                     alt="boolflix"></div>
             <div class="logo"><img @click="$emit('clicked')" class="w-50 d-block d-sm-none logo"
                     src="../assets/logo.png" alt="boolflix"></div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex gap-2 align-items-center flex-column w-50">
                 <form v-on:submit.prevent="onSubmit" class="d-flex" role="search">
                     <input v-model.trim="store.searchedTerm" class="form-control me-1" @keyup.enter="$emit('clicked')"
                         type="search" placeholder="Cerca" aria-label="Search">
                     <button @click="$emit('clicked')" class="btn btn-outline-danger" type="button">Trova</button>
                 </form>
+                <select-options @option-change="passChange"></select-options>
             </div>
         </div>
     </header>
