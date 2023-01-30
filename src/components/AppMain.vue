@@ -31,7 +31,7 @@ export default {
 }
 
 main {
-    min-height: 70vh;
+    min-height: 69vh;
     background-color: rgb(44, 43, 43);
 }
 </style>

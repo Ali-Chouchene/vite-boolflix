@@ -19,7 +19,7 @@ export default {
 </script>
 <template>
     <header>
-        <div class=" container d-flex justify-content-between align-items-center py-2">
+        <div class=" container d-flex justify-content-between h-100 align-items-center py-2">
             <div><img @click="$emit('clicked')" class="w-50 d-none d-sm-block" src="../assets/img/boolflix.png"
                     alt="boolflix"></div>
             <div class="logo"><img @click="$emit('clicked')" class="w-50 d-block d-sm-none logo"
@@ -44,7 +44,7 @@ header {
     left: 0;
     right: 0;
     z-index: 1;
-    height: 13vh;
+    height: 14vh;
 
     img {
         cursor: pointer;

@@ -37,6 +37,8 @@ export default {
 
     h1 {
         font-size: 35px;
+        color: rgb(177, 175, 175);
+        ;
     }
 
     h4 {
