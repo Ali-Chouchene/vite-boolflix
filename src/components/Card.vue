@@ -14,7 +14,12 @@ export default {
         ratingStars() {
             const vote = Math.floor(this.card.vote_average / 2);
             return Math.ceil(vote);
+        },
+        imgPath() {
+            if (!this.card.poster_path) return store.imgPlaceHolder;
+            return store.imgBase + this.card.poster_path;
         }
+
     },
     methods: {
         setStars(n) {
@@ -29,7 +34,7 @@ export default {
 </script>
 <template>
     <div class="col  shadow text-center">
-        <img class="rounded-2" :src="`${store.imgBase}${card.poster_path}`" :alt="card.title">
+        <img class="rounded-2" :src="imgPath" :alt="card.title">
         <div class="description d-flex flex-column align-items-center gap-2">
             <h5><strong>Titolo:</strong></h5>
             <h6>{{ card.title }}</h6>

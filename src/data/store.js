@@ -29,6 +29,7 @@ export const store = reactive({
 
     /** base url images */
     imgBase: 'https://image.tmdb.org/t/p/w342',
+    imgPlaceHolder: 'https://moviereelist.com/wp-content/uploads/2019/07/poster-placeholder.jpg',
 
     /** array lingue con img */
     lang: ['it', 'en', 'fr', 'ca', 'cn', 'es', 'hr', 'ja', 'ml', 'nl', 'sh',],
