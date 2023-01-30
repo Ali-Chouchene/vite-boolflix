@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-    <div class="btn-group d-none d-xl-block ms-5">
+    <div v-if="store.movies.length && store.series.length" class="btn-group d-none d-xl-block ms-5">
         <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             Choice
         </button>
