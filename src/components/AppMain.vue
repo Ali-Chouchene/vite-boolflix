@@ -17,7 +17,7 @@ export default {
 </script>
 <template>
     <main class=" py-2">
-        <welcome-page v-if="!store.movies.length && !store.isLoading"></welcome-page>
+        <welcome-page v-if="!store.movies.length && !store.isLoading && !store.series.length"></welcome-page>
         <loader v-if="store.isLoading"></loader>
         <card-section collection='movies' title="FILM"></card-section>
         <card-section collection='series' title="SERIE TV"></card-section>

@@ -11,6 +11,7 @@ export default {
     },
     methods: {
         passChange(id) {
+            console.log(id)
             this.$emit('current-option', id)
         }
     },
