@@ -12,13 +12,10 @@ export default {
     methods: {
         passChange(id) {
             this.$emit('current-option', id)
-            console.log(id)
-
         }
     },
     emits: ['clicked', 'current-option']
 }
-
 </script>
 <template>
     <header>
@@ -38,8 +35,6 @@ export default {
         </div>
     </header>
 </template>
-
-
 
 <style lang="scss" scoped>
 header {

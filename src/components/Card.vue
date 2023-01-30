@@ -9,12 +9,17 @@ export default {
 
         }
     },
+
+    computed: {
+        ratingStars() {
+            const vote = Math.floor(this.card.vote_average / 2);
+            return Math.ceil(vote);
+        }
+    },
     methods: {
-        ratingStars(n) {
-            const vote = Math.ceil(n) / 2;
-            return Math.ceil(vote)
-
-
+        setStars(n) {
+            let starClass = n <= this.ratingStars ? 'checked' : '';
+            return starClass;
         }
     },
     props: { card: Object }
@@ -30,7 +35,8 @@ export default {
             <h6>{{ card.title }}</h6>
             <h5>VOTE</h5>
             <div v-if="card.vote_average">
-                <i v-for="star in ratingStars(card.vote_average)" class="fa-solid fa-star checked"> </i>
+                <i v-for="star in 5" :class="setStars(star)" class="fa-solid fa-star ">
+                </i>
             </div>
             <p v-else>-</p>
             <h5><strong>Lingua:</strong></h5>
