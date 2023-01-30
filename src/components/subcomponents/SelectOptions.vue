@@ -8,11 +8,6 @@ export default {
             store,
             currentValue: null,
         }
-
-    },
-    computed: {
-
-
     },
     methods: {
     },
