@@ -1,6 +1,6 @@
 <script>
 import Card from './Card.vue'
-import { store } from '../data/store'
+import { store } from '../../data/store'
 export default {
     name: 'CardSection',
     components: { Card },

@@ -1,6 +1,5 @@
 <script>
-const lang = ['it', 'en', 'fr', 'ca', 'cn', 'es', 'hr', 'ja', 'ml', 'nl', 'sh',];
-import { store } from '../../src/data/store'
+import { store } from '../../data/store'
 export default {
     name: 'Card',
     data() {

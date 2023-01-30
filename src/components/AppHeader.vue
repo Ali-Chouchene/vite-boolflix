@@ -1,6 +1,6 @@
 <script>
 import { store } from '../../src/data/store'
-import SelectOptions from './SelectOptions.vue'
+import SelectOptions from './subcomponents/SelectOptions.vue'
 export default {
     name: 'AppHeader',
     components: { SelectOptions },

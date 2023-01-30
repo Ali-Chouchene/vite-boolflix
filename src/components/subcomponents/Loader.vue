@@ -1,5 +1,5 @@
 <script>
-import { store } from '../../src/data/store'
+import { store } from '../../data/store'
 export default {
     name: 'Loader',
     Data() {

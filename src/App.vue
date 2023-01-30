@@ -3,9 +3,10 @@ import axios from 'axios'
 import { store } from '../src/data/store'
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/AppMain.vue'
+import AppFooter from './components/AppFooter.vue'
 export default {
   name: 'App',
-  components: { AppHeader, AppMain },
+  components: { AppHeader, AppMain, AppFooter },
   data() {
     return {
       store,
@@ -37,6 +38,7 @@ export default {
             console.log(err.message);
           })
         store.searchedTerm = '';
+
       }
 
       else {
@@ -93,8 +95,10 @@ export default {
   <app-header @clicked="fetchApi" @current-option="filterGenre"></app-header>
   <!--main-->
   <app-main></app-main>
+  <!--footer-->
+  <app-footer></app-footer>
 </template>
 
 <style lang="scss" >
-/* appheader*/
+
 </style>

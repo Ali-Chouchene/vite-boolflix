@@ -1,8 +1,8 @@
 <script>
-import CardSection from './CardSection.vue'
+import CardSection from './subcomponents/CardSection.vue'
 import { store } from '../../src/data/store'
-import WelcomePage from './WelcomePage.vue'
-import Loader from './Loader.vue'
+import WelcomePage from './subcomponents/WelcomePage.vue'
+import Loader from './subcomponents/Loader.vue'
 export default {
     name: 'AppMain',
     components: { CardSection, WelcomePage, Loader },
@@ -16,7 +16,7 @@ export default {
 
 </script>
 <template>
-    <main class=" pt-2">
+    <main class=" py-2">
         <welcome-page v-if="!store.movies.length && !store.isLoading"></welcome-page>
         <loader v-if="store.isLoading"></loader>
         <card-section collection='movies' title="FILM"></card-section>
@@ -32,6 +32,6 @@ export default {
 
 main {
     min-height: 70vh;
-    background-color: rgb(7, 7, 7);
+    background-color: rgb(44, 43, 43);
 }
 </style>
